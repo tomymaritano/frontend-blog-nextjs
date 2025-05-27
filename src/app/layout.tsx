@@ -12,7 +12,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Mi Blog",
+  title: "Hacklab - Blog",
   description: "Blog personal creado con Next.js + Sanity",
 };
 
