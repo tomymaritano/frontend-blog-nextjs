@@ -1,4 +1,3 @@
-import Hero from "@/components/Hero";
 import PostGrid, { type Post } from "@/components/PostGrid";
 import { client } from "@/sanity/client";
 

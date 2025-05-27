@@ -1,14 +1,16 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import imageUrlBuilder from "@sanity/image-url";
 import { client } from "@/sanity/client";
 import { useState } from "react";
 import { FaShareAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
+import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 const builder = imageUrlBuilder(client);
-const urlFor = (source: any) => builder.image(source);
+const urlFor = (source: SanityImageSource) => builder.image(source);
 
 export type Post = {
   _id: string;
@@ -16,7 +18,7 @@ export type Post = {
   subtitle?: string;
   slug: { current: string };
   publishedAt: string;
-  image?: any;
+  image?: SanityImageSource;
   excerpt?: string;
   readingTime?: number;
   highlight?: string;
@@ -38,13 +40,14 @@ export default function PostGrid({ posts }: { posts: Post[] }) {
     <section className="w-full px-4 sm:px-6 lg:px-8 py-8 max-w-7xl mx-auto">
       <div className="max-w-3xl mx-auto mb-12 text-center">
         <p className="text-gray-300 text-base md:text-md leading-relaxed mb-0">
-          This project is more than just a blog. It's a living playground where I experiment with modern technologies like {" "}
-          <span className="text-orange-400 font-medium">Next.js</span>, {" "}
-          <span className="text-orange-400 font-medium">Sanity</span>, {" "}
-          <span className="text-orange-400 font-medium">Tailwind CSS</span>, and {" "}
+          This project is more than just a blog. It's a living playground where I experiment with modern technologies like{" "}
+          <span className="text-orange-400 font-medium">Next.js</span>,{" "}
+          <span className="text-orange-400 font-medium">Sanity</span>,{" "}
+          <span className="text-orange-400 font-medium">Tailwind CSS</span>, and{" "}
           <span className="text-orange-400 font-medium">TypeScript</span>, while documenting what I learn along the way.
         </p>
       </div>
+
       <motion.div 
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6"
         initial={{ opacity: 0 }}
@@ -59,9 +62,11 @@ export default function PostGrid({ posts }: { posts: Post[] }) {
           >
             <Link href={`/${post.slug.current}`}>
               {post.image && (
-                <img
+                <Image
                   src={urlFor(post.image).width(800).height(400).url()}
                   alt={post.title}
+                  width={800}
+                  height={400}
                   className="w-full h-48 object-cover transition-opacity duration-300 hover:opacity-90"
                 />
               )}
