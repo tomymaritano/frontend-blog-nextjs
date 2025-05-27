@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${dmSans.variable} antialiased bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white font-sans`}
+        className={`${dmSans.variable} antialiased bg-gradient-to-br from-gray-950 via-gray-950 to-black text-white font-sans`}
       >
         <div className="min-h-screen flex flex-col">
           <Navbar />
