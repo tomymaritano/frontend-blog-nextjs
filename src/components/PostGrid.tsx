@@ -40,7 +40,7 @@ export default function PostGrid({ posts }: { posts: Post[] }) {
     <section className="w-full px-4 sm:px-6 lg:px-8 py-8 max-w-7xl mx-auto">
       <div className="max-w-3xl mx-auto mb-12 text-center">
         <p className="text-gray-300 text-base md:text-md leading-relaxed mb-0">
-          This project is more than just a blog. It's a living playground where I experiment with modern technologies like{" "}
+          This project is more than just a blog. It&apos;s a living playground where I experiment with modern technologies like{" "}
           <span className="text-orange-400 font-medium">Next.js</span>,{" "}
           <span className="text-orange-400 font-medium">Sanity</span>,{" "}
           <span className="text-orange-400 font-medium">Tailwind CSS</span>, and{" "}
