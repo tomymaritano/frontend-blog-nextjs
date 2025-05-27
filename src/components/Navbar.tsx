@@ -21,7 +21,7 @@ export default function Navbar() {
 
         {/* Right side */}
         <div className="flex items-center gap-4">
-          <NavItem href="/" label="Home" active={pathname === "/"} />
+          <NavItem href="https://www.hacklab.dog" label="Home" active={pathname === "/"} />
           <div className="h-5 w-px bg-white/20" />
           <SocialIcon
             href="https://github.com/tomymaritano"
